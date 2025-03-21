@@ -3,6 +3,9 @@
 
 @theme {
 	--font-mulish: 'Mulish', sans-serif;
+	--color-gray: #3f3f49;
+	--color-gray-transparent: #3f3f499a;
+	--color-black-transparent: #000000b9;
 }
 
 @layer base {
