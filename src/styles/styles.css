@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import 'tailwindcss';
+
+@theme {
+	--font-mulish: 'Mulish', sans-serif;
+}
+
+@layer base {
+	body {
+		@apply font-mulish;
+	}
+}
+
+@utility container {
+	@apply mx-auto my-0 max-w-[1200px];
+}
+
+@utility img-fluid {
+	@apply w-full h-auto;
+}
