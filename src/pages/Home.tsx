@@ -1,5 +1,6 @@
 import { IoLocationOutline } from 'react-icons/io5';
-import { FaTemperatureLow } from 'react-icons/fa';
+import { WeatherDesc } from '../components/weather/WeatherDesc';
+import { WeatherDescCard } from '../components/weather/WeatherDescCard';
 
 export const Home = () => {
 	return (
@@ -11,54 +12,14 @@ export const Home = () => {
 						<input type='search' placeholder='Enter City' className='w-full outline-none' />
 					</form>
 
-					<article className='py-[5rem] px-4 border border-red-600 rounded-xl backdrop-opacity-60'>
-						<div className='flex flex-col items-center justify-center gap-5 text-white text-center mb-[6rem]'>
-							<strong className='text-7xl font-normal'>28ºC</strong>
-							<p className='text-3xl'>Rainy Day</p>
-							<p className='text-sm'>Today, expect a rainy day with temperatures reaching a maximum of 28ºC. Make sure to grab your umbrella before heading out.</p>
-						</div>
+					<article className='py-[5rem] px-4 border border-red-600 rounded-xl'>
+						<WeatherDesc />
 
 						<div className='grid grid-cols-2 gap-5'>
-							<article className='rounded-2xl p-3 text-white bg-gray-transparent'>
-								<div className='flex items-center gap-3 text-gray-400'>
-									<FaTemperatureLow />
-									<p className='uppercase text-[0.95rem]'>Feels like</p>
-								</div>
-
-								<strong className='text-3xl font-normal'>30ºC</strong>
-
-								<p className='mt-5 text-[0.8rem]'>Humidity is making it feel warmer</p>
-							</article>
-							<article className='rounded-2xl p-3 text-white bg-gray-transparent'>
-								<div className='flex items-center gap-3 text-gray-400'>
-									<FaTemperatureLow />
-									<p className='uppercase text-[0.95rem]'>Feels like</p>
-								</div>
-
-								<strong className='text-3xl font-normal'>30ºC</strong>
-
-								<p className='mt-5 text-[0.8rem]'>Humidity is making it feel warmer</p>
-							</article>
-							<article className='rounded-2xl p-3 text-white bg-gray-transparent'>
-								<div className='flex items-center gap-3 text-gray-400'>
-									<FaTemperatureLow />
-									<p className='uppercase text-[0.95rem]'>Feels like</p>
-								</div>
-
-								<strong className='text-3xl font-normal'>30ºC</strong>
-
-								<p className='mt-5 text-[0.8rem]'>Humidity is making it feel warmer</p>
-							</article>
-							<article className='rounded-2xl p-3 text-white bg-gray-transparent'>
-								<div className='flex items-center gap-3 text-gray-400'>
-									<FaTemperatureLow />
-									<p className='uppercase text-[0.95rem]'>Feels like</p>
-								</div>
-
-								<strong className='text-3xl font-normal'>30ºC</strong>
-
-								<p className='mt-5 text-[0.8rem]'>Humidity is making it feel warmer</p>
-							</article>
+							<WeatherDescCard type='temperature' />
+							<WeatherDescCard type='percipitation' />
+							<WeatherDescCard type='visibility' />
+							<WeatherDescCard type='humidity' />
 						</div>
 					</article>
 				</div>
