@@ -1,33 +1,21 @@
-import { FaTemperatureLow } from 'react-icons/fa';
-import { IoRainyOutline, IoEyeOutline, IoWaterOutline } from 'react-icons/io5';
+import { WeatherDescCardData } from '../../types/Weather.types';
 
-type WeatherDescCardProps = {
-	type: 'temperature' | 'percipitation' | 'visibility' | 'humidity';
-};
+export const WeatherDescCard = ({ /* type */ title, value, icon }: WeatherDescCardData) => {
+	//! An example of how to handle the description text for the future.
+	/* let description;
 
-export const WeatherDescCard = ({ type }: WeatherDescCardProps) => {
-	const iconMap = {
-		temperature: <FaTemperatureLow className='text-xl' />,
-		percipitation: <IoRainyOutline className='text-xl' />,
-		visibility: <IoEyeOutline className='text-xl' />,
-		humidity: <IoWaterOutline className='text-xl' />,
-	};
-
-	const titleMap = {
-		temperature: 'Feels like',
-		percipitation: 'Percipitation',
-		visibility: 'Visibility',
-		humidity: 'Humidity',
-	};
+	if (type === "temperature" && Number(value) > 25) {
+		description = "Today is a hot day!";
+	} */
 
 	return (
 		<article className='rounded-2xl p-3 text-white bg-gray-transparent'>
 			<div className='flex items-center gap-3 text-gray-400'>
-				{iconMap[type]}
-				<p className='uppercase text-[0.95rem]'>{titleMap[type]}</p>
+				{icon}
+				<p className='uppercase text-[0.95rem]'>{title}</p>
 			</div>
 
-			<strong className='text-3xl font-normal'>30ºC</strong>
+			<strong className='text-3xl font-normal'>{value}</strong>
 
 			<p className='mt-5 text-[0.8rem]'>Humidity is making it feel warmer</p>
 		</article>

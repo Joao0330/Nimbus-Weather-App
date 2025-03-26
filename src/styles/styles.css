@@ -4,13 +4,21 @@
 @theme {
 	--font-mulish: 'Mulish', sans-serif;
 	--color-gray: #3f3f49;
+	--color-gray-light: #909097;
 	--color-gray-transparent: #3f3f499a;
 	--color-black-transparent: #000000b7;
+	--color-darkBlue-transparent: #02030e9c;
 }
 
 @layer base {
 	body {
 		@apply font-mulish;
+	}
+}
+
+@layer components {
+	.forecastCard {
+		@apply flex flex-col items-center gap-2 py-2 px-5 rounded-2xl mb-4;
 	}
 }
 
@@ -20,4 +28,24 @@
 
 @utility img-fluid {
 	@apply w-full h-auto;
+}
+
+@utility scrollbar {
+	&::-webkit-scrollbar {
+		height: 8px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: var(--color-gray-transparent);
+		border-radius: 15px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: var(--color-gray);
+		border-radius: 15px;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background: #555;
+	}
 }
