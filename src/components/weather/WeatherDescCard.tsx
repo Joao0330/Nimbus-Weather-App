@@ -1,6 +1,6 @@
-import { WeatherDescCardData } from '../../types/Weather.types';
+import { weatherDescCardTypes } from '../../types/Weather.types';
 
-export const WeatherDescCard = ({ /* type */ title, value, icon }: WeatherDescCardData) => {
+export const WeatherDescCard = ({ /* type */ title, value, icon }: weatherDescCardTypes) => {
 	//! An example of how to handle the description text for the future.
 	/* let description;
 
