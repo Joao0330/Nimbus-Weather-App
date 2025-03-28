@@ -10,3 +10,11 @@ export const weatherForecastData: weatherForecastTypes[] = [
 	{ type: 'hourly', time: '18:00', temperature: 28, icon: 'cloudyDay2' },
 	{ type: 'hourly', time: '21:00', temperature: 28, icon: 'cloudyDay2' },
 ];
+
+export const dailyWeatherForecastData: weatherForecastTypes[] = [
+	{ type: 'daily', time: 'Today', date: '28/03', temperature: -2, icon: 'snowy4' },
+	{ type: 'daily', time: 'Thu', date: '29/03', temperature: -5, icon: 'snowy4' },
+	{ type: 'daily', time: 'Fri', date: '30/03', temperature: -3, icon: 'snowy5' },
+	{ type: 'daily', time: 'Sat', date: '31/03', temperature: -7, icon: 'snowy6' },
+	{ type: 'daily', time: 'Sun', date: '01/04', temperature: -14, icon: 'snowy6' },
+];

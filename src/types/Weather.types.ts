@@ -10,6 +10,7 @@ export type weatherDescCardTypes = {
 export type weatherForecastTypes = {
 	type: 'hourly' | 'daily';
 	time?: string;
+	date?: string;
 	temperature?: number;
 	icon?: string;
 };
