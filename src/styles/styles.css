@@ -17,7 +17,7 @@
 }
 
 @layer components {
-	.forecastCard {
+	.forecastCardDetails {
 		@apply flex flex-col items-center gap-2 py-2 px-5 rounded-2xl mb-4;
 	}
 }
@@ -48,6 +48,10 @@
 	&::-webkit-scrollbar-thumb:hover {
 		background: #555;
 	}
+}
+
+@utility bottomCards {
+	@apply p-5 text-white bg-darkBlue-transparent rounded-2xl w-1/2;
 }
 
 /* .compass {

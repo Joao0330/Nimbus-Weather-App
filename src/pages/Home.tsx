@@ -5,6 +5,7 @@ import { FaTemperatureLow } from 'react-icons/fa';
 import { weatherDescCardTypes } from '../types/Weather.types';
 import { SearchBar } from '../components/SearchBar';
 import { WeatherForecastCard } from '../components/weather/WeatherForecastCard';
+import { CloudCoverCard } from '../components/weather/CloudCoverCard';
 
 export const Home = () => {
 	const weatherDescCardData: weatherDescCardTypes[] = [
@@ -36,6 +37,10 @@ export const Home = () => {
 				<div className='w-3/5'>
 					<WeatherForecastCard type='hourly' />
 					<WeatherForecastCard type='daily' />
+
+					<div className='flex gap-5'>
+						<CloudCoverCard />
+					</div>
 				</div>
 			</div>
 		</section>
