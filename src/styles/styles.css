@@ -17,8 +17,16 @@
 }
 
 @layer components {
+	.forecastCard {
+		@apply p-5 text-white bg-darkBlue-transparent rounded-2xl mb-5;
+	}
+
 	.forecastCardDetails {
 		@apply flex flex-col items-center gap-2 py-2 px-5 rounded-2xl mb-4;
+	}
+
+	.bottomCards {
+		@apply p-5 text-white bg-darkBlue-transparent rounded-2xl w-1/2;
 	}
 }
 
@@ -50,65 +58,30 @@
 	}
 }
 
-@utility bottomCards {
-	@apply p-5 text-white bg-darkBlue-transparent rounded-2xl w-1/2;
+@utility compass {
+	@apply relative w-30 h-30 border-3 border-gray-800 rounded-full flex justify-center items-center bg-transparent;
 }
 
-/* .compass {
-	position: relative;
-	width: 120px;
-	height: 120px;
-	border: 3px solid #333;
-	border-radius: 50%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: #f4f4f4;
+@utility needle {
+	@apply absolute left-1/2 -translate-x-1/2 -translate-y-1/2 transform origin-bottom transition-transform duration-500 ease-in-out;
 }
 
-.needle {
-	position: absolute;
-	width: 4px;
-	height: 50px;
-	background: red;
-	top: 20px;
-	left: 50%;
-	transform-origin: bottom center;
-	transition: transform 0.5s ease-in-out;
+@utility directions {
+	@apply absolute w-full h-full font-bold text-gray-light flex justify-center items-center;
 }
 
-.directions {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	font-weight: bold;
-	color: #333;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+@utility north {
+	@apply absolute top-1 left-1/2 -translate-x-1/2 transform;
 }
 
-.north {
-	position: absolute;
-	top: 5px;
-	left: 50%;
-	transform: translateX(-50%);
+@utility east {
+	@apply absolute right-1 top-1/2 -translate-y-1/2 transform;
 }
-.east {
-	position: absolute;
-	right: 5px;
-	top: 50%;
-	transform: translateY(-50%);
+
+@utility south {
+	@apply absolute bottom-1 left-1/2 -translate-x-1/2 transform;
 }
-.south {
-	position: absolute;
-	bottom: 5px;
-	left: 50%;
-	transform: translateX(-50%);
+
+@utility west {
+	@apply absolute left-1 top-1/2 -translate-y-1/2 transform;
 }
-.west {
-	position: absolute;
-	left: 5px;
-	top: 50%;
-	transform: translateY(-50%);
-} */

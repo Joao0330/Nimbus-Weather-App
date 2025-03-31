@@ -1,5 +1,4 @@
 // For the small cards on the left side of the app
-
 export type weatherDescCardTypes = {
 	type: 'temperature' | 'percipitation' | 'visibility' | 'humidity';
 	title: string;
@@ -13,4 +12,9 @@ export type weatherForecastTypes = {
 	date?: string;
 	temperature?: number;
 	icon?: string;
+};
+
+export type windVariationTypes = {
+	type: 'Wind' | 'Gusts';
+	value: number;
 };

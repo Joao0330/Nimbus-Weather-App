@@ -1,14 +1,15 @@
 export const WindCompass = ({ windDirection }: { windDirection: number }) => {
 	return (
 		<div className='compass'>
-			<div className='needle' style={{ transform: `rotate(${windDirection}deg)` }} />
+			<svg className='needle' style={{ transform: `rotate(${windDirection}deg)` }} viewBox='0 0 100 100'>
+				<polygon points='50,10 40,90 50,80 60,90' fill='#5C98AA' />
+			</svg>
 			<div className='directions'>
 				<span className='north'>N</span>
 				<span className='east'>E</span>
 				<span className='south'>S</span>
 				<span className='west'>W</span>
 			</div>
-			<p>{windDirection}°</p>
 		</div>
 	);
 };

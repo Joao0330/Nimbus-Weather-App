@@ -21,7 +21,7 @@ export const WeatherForecastCard = ({ type }: weatherForecastTypes) => {
 	};
 
 	return (
-		<article className='p-5 text-white bg-darkBlue-transparent rounded-2xl mb-5'>
+		<article className='forecastCard'>
 			<div className='flex items-center gap-3 py-2 text-gray-light border-b-2 border-gray mb-8'>
 				{icon}
 				<h2 className='uppercase'>{forecastTitles[type] || null}</h2>

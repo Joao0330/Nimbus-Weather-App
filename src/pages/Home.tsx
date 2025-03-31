@@ -6,6 +6,7 @@ import { weatherDescCardTypes } from '../types/Weather.types';
 import { SearchBar } from '../components/SearchBar';
 import { WeatherForecastCard } from '../components/weather/WeatherForecastCard';
 import { CloudCoverCard } from '../components/weather/CloudCoverCard';
+import { WindSpeedCard } from '../components/weather/WindSpeedCard';
 
 export const Home = () => {
 	const weatherDescCardData: weatherDescCardTypes[] = [
@@ -23,7 +24,7 @@ export const Home = () => {
 				<div className='w-2/5 flex flex-col gap-5'>
 					<SearchBar />
 
-					<article className='flex flex-col items-center justify-between py-[5rem] px-4 rounded-xl border border-red-600'>
+					<article className='flex flex-col items-center justify-between py-[5rem] px-4 rounded-xl'>
 						<WeatherDesc />
 
 						<div className='grid grid-cols-2 gap-5'>
@@ -40,6 +41,7 @@ export const Home = () => {
 
 					<div className='flex gap-5'>
 						<CloudCoverCard />
+						<WindSpeedCard />
 					</div>
 				</div>
 			</div>

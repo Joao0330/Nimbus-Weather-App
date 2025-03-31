@@ -8,7 +8,7 @@ export const CloudCoverCard = () => {
 				<h2 className='uppercase'>cloud cover</h2>
 			</div>
 
-			<strong className='text-3xl font-normal'>87%</strong>
+			<strong className='text-3xl font-medium'>87%</strong>
 		</article>
 	);
 };
