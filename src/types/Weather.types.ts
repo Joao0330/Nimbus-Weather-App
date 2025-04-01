@@ -18,3 +18,13 @@ export type windVariationTypes = {
 	type: 'Wind' | 'Gusts';
 	value: number;
 };
+
+export type weatherApiDataTypes = {
+	main: {
+		temp: number;
+	};
+	weather: {
+		main: string;
+	}[];
+	name: string;
+};

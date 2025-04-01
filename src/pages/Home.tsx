@@ -7,6 +7,7 @@ import { SearchBar } from '../components/SearchBar';
 import { WeatherForecastCard } from '../components/weather/WeatherForecastCard';
 import { CloudCoverCard } from '../components/weather/CloudCoverCard';
 import { WindSpeedCard } from '../components/weather/WindSpeedCard';
+import { useWeather } from '../context/WeatherContext';
 
 export const Home = () => {
 	const weatherDescCardData: weatherDescCardTypes[] = [
@@ -16,15 +17,17 @@ export const Home = () => {
 		{ type: 'humidity', title: 'Humidity', value: '30', icon: <IoWaterOutline className='text-xl' /> },
 	];
 
-	//!const windDirection = 45;
+	const { setCity } = useWeather();
+
+	//! Consider changing the city state from the context to this component and then passing to the other children that need it as props!
 
 	return (
 		<section className='min-h-screen bg-[url(../src/assets/rain.gif)] bg-cover bg-no-repeat bg-center py-[7rem]'>
 			<div className='container flex gap-5 p-6 rounded-xl bg-black-transparent'>
 				<div className='w-2/5 flex flex-col gap-5'>
-					<SearchBar />
+					<SearchBar onSearch={setCity} />
 
-					<article className='flex flex-col items-center justify-between py-[5rem] px-4 rounded-xl'>
+					<article className='flex flex-col items-center py-[5rem] px-4 rounded-xl'>
 						<WeatherDesc />
 
 						<div className='grid grid-cols-2 gap-5'>
