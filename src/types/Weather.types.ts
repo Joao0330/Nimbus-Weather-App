@@ -2,7 +2,7 @@
 export type weatherDescCardTypes = {
 	type: 'temperature' | 'percipitation' | 'visibility' | 'humidity';
 	title: string;
-	value: string;
+	value: number;
 	icon: React.JSX.Element;
 };
 
@@ -22,9 +22,15 @@ export type windVariationTypes = {
 export type weatherApiDataTypes = {
 	main: {
 		temp: number;
+		feels_like: number;
+		humidity: number;
 	};
 	weather: {
 		main: string;
 	}[];
+	visibility: number;
+	rain: {
+		'1h': number;
+	};
 	name: string;
 };

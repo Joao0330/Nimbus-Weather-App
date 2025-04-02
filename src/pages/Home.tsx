@@ -1,23 +1,15 @@
-import { IoEyeOutline, IoRainyOutline, IoWaterOutline } from 'react-icons/io5';
 import { WeatherDesc } from '../components/weather/WeatherDesc';
 import { WeatherDescCard } from '../components/weather/WeatherDescCard';
-import { FaTemperatureLow } from 'react-icons/fa';
-import { weatherDescCardTypes } from '../types/Weather.types';
 import { SearchBar } from '../components/SearchBar';
 import { WeatherForecastCard } from '../components/weather/WeatherForecastCard';
 import { CloudCoverCard } from '../components/weather/CloudCoverCard';
 import { WindSpeedCard } from '../components/weather/WindSpeedCard';
 import { useWeather } from '../context/WeatherContext';
+import { useWeatherDescCardData } from '../hooks/useWeatherDescCardData';
 
 export const Home = () => {
-	const weatherDescCardData: weatherDescCardTypes[] = [
-		{ type: 'temperature', title: 'Feels like', value: '30', icon: <FaTemperatureLow className='text-xl' /> },
-		{ type: 'percipitation', title: 'Percipitation', value: '30', icon: <IoRainyOutline className='text-xl' /> },
-		{ type: 'visibility', title: 'Visibility', value: '30', icon: <IoEyeOutline className='text-xl' /> },
-		{ type: 'humidity', title: 'Humidity', value: '30', icon: <IoWaterOutline className='text-xl' /> },
-	];
-
 	const { setCity } = useWeather();
+	const weatherDescCardData = useWeatherDescCardData();
 
 	//! Consider changing the city state from the context to this component and then passing to the other children that need it as props!
 
@@ -31,9 +23,10 @@ export const Home = () => {
 						<WeatherDesc />
 
 						<div className='grid grid-cols-2 gap-5'>
-							{weatherDescCardData.map(({ type, title, value, icon }) => (
-								<WeatherDescCard key={type} type={type} title={title} value={value} icon={icon} />
+							{weatherDescCardData.map(card => (
+								<WeatherDescCard key={card.type} {...card} />
 							))}
+							{/* TODO: Fix the display of correct units on the weather desc card */}
 						</div>
 					</article>
 				</div>
