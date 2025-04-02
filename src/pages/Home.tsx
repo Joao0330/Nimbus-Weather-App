@@ -26,7 +26,6 @@ export const Home = () => {
 							{weatherDescCardData.map(card => (
 								<WeatherDescCard key={card.type} {...card} />
 							))}
-							{/* TODO: Fix the display of correct units on the weather desc card */}
 						</div>
 					</article>
 				</div>
@@ -39,6 +38,8 @@ export const Home = () => {
 						<CloudCoverCard />
 						<WindSpeedCard />
 					</div>
+
+					{/* TODO Add the api data for the cloud cover and wind speed cards */}
 				</div>
 			</div>
 		</section>

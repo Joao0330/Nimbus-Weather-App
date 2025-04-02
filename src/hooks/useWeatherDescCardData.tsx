@@ -16,9 +16,9 @@ export const useWeatherDescCardData = (): weatherDescCardTypes[] => {
 			icon: <FaTemperatureLow className='text-xl' />,
 		},
 		{
-			type: 'percipitation',
-			title: 'Percipitation',
-			value: weather?.rain?.['1h'] ?? 0,
+			type: 'precipitation',
+			title: weather?.snow ? 'Snow' : 'Rain',
+			value: weather?.rain?.['1h'] ?? weather?.snow?.['1h'] ?? 0,
 			icon: <IoRainyOutline className='text-xl' />,
 		},
 		{

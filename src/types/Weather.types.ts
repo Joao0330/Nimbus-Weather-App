@@ -1,6 +1,6 @@
 // For the small cards on the left side of the app
 export type weatherDescCardTypes = {
-	type: 'temperature' | 'percipitation' | 'visibility' | 'humidity';
+	type: 'temperature' | 'precipitation' | 'visibility' | 'humidity';
 	title: string;
 	value: number;
 	icon: React.JSX.Element;
@@ -30,6 +30,9 @@ export type weatherApiDataTypes = {
 	}[];
 	visibility: number;
 	rain: {
+		'1h': number;
+	};
+	snow: {
 		'1h': number;
 	};
 	name: string;
