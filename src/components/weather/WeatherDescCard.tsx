@@ -1,14 +1,8 @@
+import { unitMap } from '../../data/weather-forecast';
 import { getWeatherDescription } from '../../lib/getWeatherDescription';
 import { weatherDescCardTypes } from '../../types/Weather.types';
 
 export const WeatherDescCard = ({ type, title, value, icon }: weatherDescCardTypes) => {
-	const unitMap: Record<weatherDescCardTypes['type'], string> = {
-		temperature: ' °C',
-		humidity: ' %',
-		precipitation: ' mm/h',
-		visibility: ' m',
-	};
-
 	const unit = unitMap[type] ?? '';
 	const description = getWeatherDescription(type, value);
 

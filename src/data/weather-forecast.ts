@@ -1,4 +1,11 @@
-import { weatherForecastTypes, windVariationTypes } from '../types/Weather.types';
+import { weatherDescCardTypes, weatherForecastTypes, windVariationTypes } from '../types/Weather.types';
+
+export const unitMap: Record<weatherDescCardTypes['type'], string> = {
+	temperature: ' °C',
+	humidity: ' %',
+	precipitation: ' mm/h',
+	visibility: ' m',
+};
 
 export const weatherForecastData: weatherForecastTypes[] = [
 	{ type: 'hourly', time: 'Now', temperature: 28, icon: 'cloudyDay2' },
