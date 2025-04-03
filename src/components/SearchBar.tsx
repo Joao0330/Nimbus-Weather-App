@@ -7,7 +7,7 @@ export const SearchBar = ({ onSearch }: { onSearch: (city: string) => void }) =>
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
 		if (searchValue.trim()) {
-			onSearch(searchValue.charAt(0).toUpperCase() + searchValue.slice(1));
+			onSearch(searchValue);
 		}
 	};
 

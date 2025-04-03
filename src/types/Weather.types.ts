@@ -19,6 +19,11 @@ export type windVariationTypes = {
 	value: number;
 };
 
+export type WindVariationReturnType = {
+	windValues: windVariationTypes[];
+	windDirection: number;
+};
+
 export type weatherApiDataTypes = {
 	main: {
 		temp: number;
@@ -29,11 +34,19 @@ export type weatherApiDataTypes = {
 		main: string;
 	}[];
 	visibility: number;
+	wind: {
+		speed: number;
+		deg: number;
+		gust: number;
+	};
 	rain: {
 		'1h': number;
 	};
 	snow: {
 		'1h': number;
+	};
+	clouds: {
+		all: number;
 	};
 	name: string;
 };

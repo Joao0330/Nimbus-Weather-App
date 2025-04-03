@@ -1,9 +1,11 @@
 import { LuWind } from 'react-icons/lu';
 import { WindCompass } from './WindCompass';
 import { WindSpeedCardType } from './WindSpeedCardType';
-import { windVariation } from '../../data/weather-forecast';
+import { useWindSpeed } from '../../hooks/useWindSpeed';
 
 export const WindSpeedCard = () => {
+	const { windDirection, windValues } = useWindSpeed();
+
 	return (
 		<article className='bottomCards'>
 			<div className='flex gap-3'>
@@ -14,13 +16,13 @@ export const WindSpeedCard = () => {
 					</div>
 
 					<div>
-						{windVariation.map((item, index) => (
-							<WindSpeedCardType key={index} type={item.type} value={item.value} />
+						{windValues.map(item => (
+							<WindSpeedCardType key={item.type} {...item} />
 						))}
 					</div>
 				</div>
 
-				<WindCompass windDirection={90} />
+				<WindCompass windDirection={windDirection} />
 			</div>
 		</article>
 	);

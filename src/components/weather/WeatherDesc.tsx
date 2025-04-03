@@ -12,7 +12,7 @@ export const WeatherDesc = () => {
 
 			{weather && (
 				<>
-					<strong className='text-5xl font-medium mb-[4rem]'>{city}</strong>
+					<strong className='text-5xl font-medium mb-[4rem]'>{weather.name}</strong>
 					<strong className='text-7xl font-normal'>{Math.round(weather.main.temp)}°C</strong>
 					<p className='text-3xl'>{weather.weather[0].main}</p>
 				</>

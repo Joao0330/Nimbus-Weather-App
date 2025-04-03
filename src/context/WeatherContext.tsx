@@ -13,7 +13,7 @@ type WeatherProviderProps = {
 const WeatherContext = createContext({} as WeatherContextData);
 
 export function WeatherProvider({ children }: WeatherProviderProps) {
-	const [city, setCity] = useState('London');
+	const [city, setCity] = useState('Lisbon');
 
 	return <WeatherContext.Provider value={{ city, setCity }}>{children}</WeatherContext.Provider>;
 }

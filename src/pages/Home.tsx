@@ -38,8 +38,6 @@ export const Home = () => {
 						<CloudCoverCard />
 						<WindSpeedCard />
 					</div>
-
-					{/* TODO Add the api data for the cloud cover and wind speed cards */}
 				</div>
 			</div>
 		</section>
