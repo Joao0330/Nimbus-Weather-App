@@ -1,12 +1,12 @@
 import { FaTemperatureLow } from 'react-icons/fa';
 import { useWeather } from '../context/WeatherContext';
 import { weatherDescCardTypes } from '../types/Weather.types';
-import { useFetchWeather } from './useFetchWeather';
+/* import { useFetchWeather } from './useFetchWeather'; */
 import { IoEyeOutline, IoRainyOutline, IoWaterOutline } from 'react-icons/io5';
 
 export const useWeatherDescCardData = (): weatherDescCardTypes[] => {
-	const { city } = useWeather();
-	const { weather } = useFetchWeather(city);
+	const { /* city, */ weather } = useWeather();
+	/* const { weather } = useFetchWeather(city, 'current'); */
 
 	return [
 		{

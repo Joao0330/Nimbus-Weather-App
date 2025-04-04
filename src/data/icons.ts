@@ -47,5 +47,3 @@ export const weatherIcons: Record<string, string> = {
 	snowy6: snowy6,
 	thunder: thunder,
 };
-
-console.log(weatherIcons[0]);

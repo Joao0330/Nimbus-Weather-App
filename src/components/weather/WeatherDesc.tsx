@@ -1,9 +1,9 @@
 import { useWeather } from '../../context/WeatherContext';
-import { useFetchWeather } from '../../hooks/useFetchWeather';
+/* import { useFetchWeather } from '../../hooks/useFetchWeather'; */
 
 export const WeatherDesc = () => {
-	const { city } = useWeather();
-	const { weather, loading, error } = useFetchWeather(city);
+	const { /* city, */ weather, loading, error } = useWeather();
+	/* const { weather, loading, error } = useFetchWeather(city, 'current'); */
 
 	return (
 		<div className='flex flex-col items-center justify-center gap-5 text-white text-center mb-[6rem]'>
