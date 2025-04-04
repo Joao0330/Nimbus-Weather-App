@@ -1,37 +1,18 @@
-import { useEffect, useState } from 'react';
 import { api } from '../lib/axios';
-import { weatherApiDataTypes } from '../types/Weather.types';
+import { useQuery } from '@tanstack/react-query';
 
-const forecastType: Record<'current' | 'forecast', string> = {
-	current: 'weather',
-	forecast: 'forecast',
+const fetchWeather = async (city: string, type: 'current' | 'forecast') => {
+	const forecastType = { current: 'weather', forecast: 'forecast' };
+	const { data } = await api.get(`/${forecastType[type]}?q=${city}`);
+	return data;
 };
 
 export const useFetchWeather = (city: string, type: 'current' | 'forecast') => {
-	const [weather, setWeather] = useState<weatherApiDataTypes | null>(null);
-	const [loading, setLoading] = useState(false);
-	const [error, setError] = useState<string | null>(null);
-
-	useEffect(() => {
-		if (!city) return;
-
-		const fetchWeather = async () => {
-			console.log('Effect triggered due to:', { city, type });
-			setLoading(true);
-			try {
-				const { data } = await api.get(`/${forecastType[type]}?q=${city}`);
-				setWeather(data);
-				setError(null);
-			} catch (err) {
-				setError('Failed to fetch weather data');
-				console.error(err);
-			} finally {
-				setLoading(false);
-			}
-		};
-
-		fetchWeather();
-	}, [city, type]);
-
-	return { weather, loading, error };
+	return useQuery({
+		queryKey: ['weather', city, type],
+		queryFn: () => fetchWeather(city, type),
+		staleTime: 5 * 60 * 1000, // Data stays fresh for 5 minutes
+		enabled: !!city,
+		retry: 1,
+	});
 };

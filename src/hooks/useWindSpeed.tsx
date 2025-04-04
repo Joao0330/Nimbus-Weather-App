@@ -1,10 +1,8 @@
 import { useWeather } from '../context/WeatherContext';
 import { WindVariationReturnType, windVariationTypes } from '../types/Weather.types';
-/* import { useFetchWeather } from './useFetchWeather'; */
 
 export const useWindSpeed = (): WindVariationReturnType => {
-	const { /* city, */ weather } = useWeather();
-	/* const { weather } = useFetchWeather(city, 'current'); */
+	const { weather } = useWeather();
 
 	const windDirection = weather?.wind.deg ?? 0;
 

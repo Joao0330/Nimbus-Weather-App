@@ -1,14 +1,12 @@
 import { useWeather } from '../../context/WeatherContext';
-/* import { useFetchWeather } from '../../hooks/useFetchWeather'; */
 
 export const WeatherDesc = () => {
-	const { /* city, */ weather, loading, error } = useWeather();
-	/* const { weather, loading, error } = useFetchWeather(city, 'current'); */
+	const { weather, isLoading, isError } = useWeather();
 
 	return (
 		<div className='flex flex-col items-center justify-center gap-5 text-white text-center mb-[6rem]'>
-			{loading && <p>Loading...</p>}
-			{error && <p>{error}</p>}
+			{isLoading && <p>Loading...</p>}
+			{isError && <p>Error fetching weather data</p>}
 
 			{weather && (
 				<>

@@ -3,25 +3,25 @@ import { createContext, ReactNode, useContext, useState } from 'react';
 import { useFetchWeather } from '../hooks/useFetchWeather';
 import { weatherApiDataTypes } from '../types/Weather.types';
 
-type WeatherContextData = {
+type WeatherContextDataTypes = {
 	city: string;
 	setCity: (city: string) => void;
 	weather: weatherApiDataTypes | null;
-	loading: boolean;
-	error: string | null;
+	isLoading: boolean;
+	isError: boolean;
 };
 
 type WeatherProviderProps = {
 	children: ReactNode;
 };
 
-const WeatherContext = createContext({} as WeatherContextData);
+const WeatherContext = createContext({} as WeatherContextDataTypes);
 
 export function WeatherProvider({ children }: WeatherProviderProps) {
-	const [city, setCity] = useState('Lisbon');
-	const { weather, loading, error } = useFetchWeather(city, 'current');
+	const [city, setCity] = useState('lisbon');
+	const { data: weather, isLoading, isError } = useFetchWeather(city, 'current');
 
-	return <WeatherContext.Provider value={{ city, setCity, weather, loading, error }}>{children}</WeatherContext.Provider>;
+	return <WeatherContext.Provider value={{ city, setCity, weather, isLoading, isError }}>{children}</WeatherContext.Provider>;
 }
 
 export function useWeather() {

@@ -1,10 +1,8 @@
 import { CiCloudOn } from 'react-icons/ci';
-/* import { useFetchWeather } from '../../hooks/useFetchWeather'; */
 import { useWeather } from '../../context/WeatherContext';
 
 export const CloudCoverCard = () => {
-	const { /* city, */ weather } = useWeather();
-	/* const { weather } = useFetchWeather(city, 'current'); */
+	const { weather } = useWeather();
 
 	return (
 		<article className='bottomCards'>
