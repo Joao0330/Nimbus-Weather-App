@@ -22,7 +22,7 @@
 	}
 
 	.forecastCardDetails {
-		@apply flex flex-col items-center gap-2 py-2 px-5 rounded-2xl mb-4;
+		@apply flex flex-col items-center gap-2 py-4 px-6 rounded-2xl mb-4 /* border border-red-600 */ w-full;
 	}
 
 	.bottomCards {

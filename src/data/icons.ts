@@ -21,29 +21,21 @@ import snowy4 from '../assets/weather-icons/snowy-4.svg';
 import snowy5 from '../assets/weather-icons/snowy-5.svg';
 import snowy6 from '../assets/weather-icons/snowy-6.svg';
 import thunder from '../assets/weather-icons/thunder.svg';
+import fog from '../assets/weather-icons/fog.svg';
 
 export const weatherIcons: Record<string, string> = {
-	cloudyDay1: cloudyDay1,
-	cloudyDay2: cloudyDay2,
-	cloudyDay3: cloudyDay3,
-	cloudyNight1: cloudyNight1,
-	cloudyNight2: cloudyNight2,
-	cloudyNight3: cloudyNight3,
-	cloudy: cloudy,
-	day: day,
+	Clouds: cloudy,
+	Clear: day,
 	night: night,
-	rainy1: rainy1,
-	rainy2: rainy2,
-	rainy3: rainy3,
-	rainy4: rainy4,
-	rainy5: rainy5,
-	rainy6: rainy6,
-	rainy7: rainy7,
-	snowy1: snowy1,
-	snowy2: snowy2,
-	snowy3: snowy3,
-	snowy4: snowy4,
-	snowy5: snowy5,
-	snowy6: snowy6,
-	thunder: thunder,
+	Drizzle: rainy5,
+	Rain: rainy6,
+	Snow: snowy6,
+	Thunderstorm: thunder,
+	Mist: fog,
+	Smoke: fog,
+	Haze: fog,
+	Dust: fog,
+	Fog: fog,
+	Sand: fog,
+	Ash: fog,
 };

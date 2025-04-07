@@ -7,6 +7,7 @@ export type weatherDescCardTypes = {
 };
 
 export type weatherForecastTypes = {
+	position?: number;
 	type: 'hourly' | 'daily';
 	time?: string;
 	date?: string;
@@ -49,4 +50,24 @@ export type weatherApiDataTypes = {
 		all: number;
 	};
 	name: string;
+};
+
+export type forecastWeatherApiDataTypes = {
+	list: [
+		{
+			dt: number;
+			main: {
+				temp: number;
+			};
+			weather: [
+				{
+					main: string;
+					icon: string;
+				},
+			];
+		},
+	];
+	city: {
+		timezone: number;
+	};
 };

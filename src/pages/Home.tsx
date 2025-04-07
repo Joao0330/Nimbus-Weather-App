@@ -11,8 +11,6 @@ export const Home = () => {
 	const { setCity } = useWeather();
 	const weatherDescCardData = useWeatherDescCardData();
 
-	//! Consider changing the city state from the context to this component and then passing to the other children that need it as props!
-
 	return (
 		<section className='min-h-screen bg-[url(../src/assets/rain.gif)] bg-cover bg-no-repeat bg-center py-[7rem]'>
 			<div className='container flex gap-5 p-6 rounded-xl bg-black-transparent'>
