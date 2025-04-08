@@ -8,8 +8,6 @@ dayjs.extend(utc);
 export const useHourlyForecast = (): weatherForecastTypes[] => {
 	const { forecastWeather } = useWeather();
 
-	console.log(forecastWeather);
-
 	const hourlyForecast = forecastWeather?.list.slice(0, 8);
 	const timezone = forecastWeather?.city?.timezone ?? 0;
 

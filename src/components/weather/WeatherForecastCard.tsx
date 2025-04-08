@@ -1,12 +1,13 @@
 import { FaRegClock, FaRegCalendar } from 'react-icons/fa';
 import { WeatherForecastDetails } from './WeatherForecastDetails';
 import { weatherForecastTypes } from '../../types/Weather.types';
-import { dailyWeatherForecastData } from '../../data/weather-forecast';
 import { weatherIcons } from '../../data/icons';
 import { useHourlyForecast } from '../../hooks/useHourlyForecast';
+import { useDailyForecast } from '../../hooks/useDailyForecast';
 
 export const WeatherForecastCard = ({ type }: weatherForecastTypes) => {
 	const hourlyForecastData = useHourlyForecast();
+	const dailyForecastData = useDailyForecast();
 
 	const forecastTitles: Record<'hourly' | 'daily', string> = {
 		hourly: '3-hour forecast',
@@ -14,7 +15,7 @@ export const WeatherForecastCard = ({ type }: weatherForecastTypes) => {
 	};
 
 	const icon = type === 'hourly' ? <FaRegClock className='text-xl' /> : <FaRegCalendar className='text-xl' />;
-	const forecastData = type === 'hourly' ? hourlyForecastData : dailyWeatherForecastData;
+	const forecastData = type === 'hourly' ? hourlyForecastData : dailyForecastData;
 
 	return (
 		<article className='forecastCard'>
