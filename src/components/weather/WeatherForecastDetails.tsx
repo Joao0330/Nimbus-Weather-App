@@ -5,9 +5,8 @@ export const WeatherForecastDetails = ({ type, time, date, temperature, icon, po
 		<article className={position === 0 ? 'forecastCardDetails bg-gray-transparent' : 'forecastCardDetails'}>
 			<time className='text-sm'>{time}</time>
 			{type === 'daily' && <time className='text-xs text-gray-light'>{date}</time>}
-			<strong className='text-3xl font-medium'>{temperature + '°'}</strong>
-			<img src={icon} alt={icon} className='' />
+			<strong className='text-3xl font-medium w-12 text-center'>{temperature + '°'}</strong>
+			<img src={icon} alt={icon} />
 		</article>
-		/* TODO Fix the icon size when temperature is only 1 digit */
 	);
 };
