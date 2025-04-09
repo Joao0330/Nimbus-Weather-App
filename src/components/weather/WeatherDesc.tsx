@@ -19,6 +19,7 @@ export const WeatherDesc = () => {
 			<p className='text-sm mt-7.5 leading-6'>
 				Rain is falling steadily, covering the sky with gray clouds. Don't forget your umbrella if you're heading out, and stay alert as roads may be slippery.
 			</p>
+			{/* TODO Add dynamic descriptions above */}
 		</div>
 	);
 };

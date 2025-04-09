@@ -38,6 +38,10 @@
 	@apply w-full h-auto;
 }
 
+@utility background-gradient {
+	background: linear-gradient(180deg, rgb(33, 35, 49) 0%, rgba(53, 122, 181, 1) 50%, rgba(3, 3, 3, 1) 100%);
+}
+
 @utility scrollbar {
 	&::-webkit-scrollbar {
 		height: 8px;

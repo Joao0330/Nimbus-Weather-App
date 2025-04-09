@@ -12,8 +12,8 @@ export const Home = () => {
 	const weatherDescCardData = useWeatherDescCardData();
 
 	return (
-		<section className='min-h-screen bg-[url(../src/assets/rain.gif)] bg-cover bg-no-repeat bg-center py-[7rem]'>
-			<div className='container flex gap-5 p-6 rounded-xl bg-black-transparent'>
+		<section className='min-h-screen background-gradient py-[7rem]'>
+			<div className='container flex gap-5 p-6 rounded-3xl bg-black-transparent'>
 				<div className='w-2/5 flex flex-col gap-5'>
 					<SearchBar onSearch={setCity} />
 

@@ -2,6 +2,7 @@ import { FaTemperatureLow } from 'react-icons/fa';
 import { useWeather } from '../context/WeatherContext';
 import { weatherDescCardTypes } from '../types/Weather.types';
 import { IoEyeOutline, IoRainyOutline, IoWaterOutline } from 'react-icons/io5';
+import { BsCloudSnow } from 'react-icons/bs';
 
 export const useWeatherDescCardData = (): weatherDescCardTypes[] => {
 	const { weather } = useWeather();
@@ -17,7 +18,7 @@ export const useWeatherDescCardData = (): weatherDescCardTypes[] => {
 			type: 'precipitation',
 			title: weather?.snow ? 'Snow' : 'Rain',
 			value: weather?.rain?.['1h'] ?? weather?.snow?.['1h'] ?? 0,
-			icon: <IoRainyOutline className='text-xl' />,
+			icon: weather?.snow ? <BsCloudSnow className='text-xl' /> : <IoRainyOutline className='text-xl' />,
 		},
 		{
 			type: 'visibility',
