@@ -1,11 +1,13 @@
 import { useWeather } from '../../context/WeatherContext';
+import { weatherDescText } from '../../data/weather-forecast';
+import { Loader } from '../Loader';
 
 export const WeatherDesc = () => {
 	const { weather, isLoading, isError } = useWeather();
 
 	return (
 		<div className='flex flex-col items-center justify-center gap-5 text-white text-center mb-[6rem]'>
-			{isLoading && <p>Loading...</p>}
+			{isLoading && <Loader />}
 			{isError && <p>Error fetching weather data</p>}
 
 			{weather && (
@@ -13,13 +15,10 @@ export const WeatherDesc = () => {
 					<strong className='text-5xl font-medium mb-[4rem]'>{weather.name}</strong>
 					<strong className='text-7xl font-normal'>{Math.round(weather.main.temp)}°C</strong>
 					<p className='text-3xl'>{weather.weather[0].main}</p>
+
+					<p className='text-sm mt-7.5 leading-6'>{weatherDescText[weather?.weather[0].main]}</p>
 				</>
 			)}
-
-			<p className='text-sm mt-7.5 leading-6'>
-				Rain is falling steadily, covering the sky with gray clouds. Don't forget your umbrella if you're heading out, and stay alert as roads may be slippery.
-			</p>
-			{/* TODO Add dynamic descriptions above */}
 		</div>
 	);
 };

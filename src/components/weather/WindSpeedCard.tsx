@@ -2,8 +2,10 @@ import { LuWind } from 'react-icons/lu';
 import { WindCompass } from './WindCompass';
 import { WindSpeedCardType } from './WindSpeedCardType';
 import { useWindSpeed } from '../../hooks/useWindSpeed';
+import { useWeather } from '../../context/WeatherContext';
 
 export const WindSpeedCard = () => {
+	const { weather, isLoading, isError } = useWeather();
 	const { windDirection, windValues } = useWindSpeed();
 
 	return (
@@ -15,11 +17,16 @@ export const WindSpeedCard = () => {
 						<h2 className='uppercase'>wind</h2>
 					</div>
 
-					<div>
-						{windValues.map(item => (
-							<WindSpeedCardType key={item.type} {...item} />
-						))}
-					</div>
+					{isLoading && <p>Loading...</p>}
+					{isError && <p>Error fetching weather data</p>}
+
+					{weather && (
+						<div>
+							{windValues.map(item => (
+								<WindSpeedCardType key={item.type} {...item} />
+							))}
+						</div>
+					)}
 				</div>
 
 				<WindCompass windDirection={windDirection} />

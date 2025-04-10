@@ -2,7 +2,7 @@ import { CiCloudOn } from 'react-icons/ci';
 import { useWeather } from '../../context/WeatherContext';
 
 export const CloudCoverCard = () => {
-	const { weather } = useWeather();
+	const { weather, isLoading, isError } = useWeather();
 
 	return (
 		<article className='bottomCards'>
@@ -11,7 +11,10 @@ export const CloudCoverCard = () => {
 				<h2 className='uppercase'>cloud cover</h2>
 			</div>
 
-			<strong className='text-3xl font-medium'>{weather?.clouds.all}%</strong>
+			{isLoading && <p>Loading...</p>}
+			{isError && <p>Error fetching weather data</p>}
+
+			{weather && <strong className='text-3xl font-medium'>{weather?.clouds.all}%</strong>}
 		</article>
 	);
 };

@@ -28,6 +28,47 @@
 	.bottomCards {
 		@apply p-5 text-white bg-darkBlue-transparent rounded-2xl w-1/2;
 	}
+	.loader {
+		@apply flex justify-center items-center opacity-90 transition-all duration-500 z-[9999];
+	}
+
+	.loader svg {
+		width: 3.25em;
+		transform-origin: center;
+		animation: rotate4 2s linear infinite;
+	}
+
+	.loader circle {
+		fill: none;
+		stroke: theme(--color-blue-800);
+		stroke-width: 2;
+		stroke-dasharray: 1, 200;
+		stroke-dashoffset: 0;
+		stroke-linecap: round;
+		animation: dash4 1.5s ease-in-out infinite;
+	}
+
+	@keyframes rotate4 {
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
+	@keyframes dash4 {
+		0% {
+			stroke-dasharray: 1, 200;
+			stroke-dashoffset: 0;
+		}
+
+		50% {
+			stroke-dasharray: 90, 200;
+			stroke-dashoffset: -35px;
+		}
+
+		100% {
+			stroke-dashoffset: -125px;
+		}
+	}
 }
 
 @utility container {

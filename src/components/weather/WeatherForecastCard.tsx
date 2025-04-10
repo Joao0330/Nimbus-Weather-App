@@ -4,8 +4,11 @@ import { weatherForecastTypes } from '../../types/Weather.types';
 import { weatherIcons } from '../../data/icons';
 import { useHourlyForecast } from '../../hooks/useHourlyForecast';
 import { useDailyForecast } from '../../hooks/useDailyForecast';
+import { useWeather } from '../../context/WeatherContext';
+import { Loader } from '../Loader';
 
 export const WeatherForecastCard = ({ type }: weatherForecastTypes) => {
+	const { forecastWeather, forecastIsLoading, forecastIsError } = useWeather();
 	const hourlyForecastData = useHourlyForecast();
 	const dailyForecastData = useDailyForecast();
 
@@ -24,19 +27,26 @@ export const WeatherForecastCard = ({ type }: weatherForecastTypes) => {
 				<h2 className='uppercase'>{forecastTitles[type] || null}</h2>
 			</div>
 
-			<div className='flex justify-between gap-7 overflow-x-scroll scrollbar'>
-				{forecastData.map((item, index) => (
-					<WeatherForecastDetails
-						key={index}
-						position={index}
-						type={item.type}
-						time={item.time}
-						temperature={item.temperature}
-						icon={weatherIcons[item.icon ?? 'Clear']}
-						{...(type === 'daily' && { date: item.date })}
-					/>
-				))}
-			</div>
+			{forecastIsLoading && <Loader />}
+			{forecastIsError && <p>Error fetching weather data</p>}
+
+			{forecastWeather && (
+				<>
+					<div className='flex justify-between gap-7 overflow-x-scroll scrollbar'>
+						{forecastData.map((item, index) => (
+							<WeatherForecastDetails
+								key={index}
+								position={index}
+								type={item.type}
+								time={item.time}
+								temperature={item.temperature}
+								icon={weatherIcons[item.icon ?? 'Clear']}
+								{...(type === 'daily' && { date: item.date })}
+							/>
+						))}
+					</div>
+				</>
+			)}
 		</article>
 	);
 };
