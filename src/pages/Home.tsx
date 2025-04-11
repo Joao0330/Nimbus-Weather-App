@@ -39,7 +39,5 @@ export const Home = () => {
 				</div>
 			</div>
 		</section>
-
-		/* TODO refactor the loader styles on the styles.css to make it nested */
 	);
 };
