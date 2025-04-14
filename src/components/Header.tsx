@@ -4,7 +4,7 @@ import logo from '../assets/logo.png';
 export const Header = () => {
 	return (
 		<header>
-			<div className='container relative'>
+			<div className='container relative z-10'>
 				<div className='flex items-center justify-between py-6 absolute w-full'>
 					<div className='flex items-center gap-4'>
 						<h1 className='text-3xl text-white'>Nimbus</h1>
@@ -12,8 +12,8 @@ export const Header = () => {
 					</div>
 
 					<nav>
-						<Link to='/' className='text-white'>
-							About us
+						<Link to='/about' className='text-white hover:text-gray-400 transition-colors duration-300'>
+							About
 						</Link>
 					</nav>
 				</div>

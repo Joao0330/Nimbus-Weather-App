@@ -78,6 +78,10 @@
 	@apply w-full h-auto;
 }
 
+@utility overlay {
+	@apply after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-darkBlue-transparent;
+}
+
 @utility background-gradient {
 	background: linear-gradient(180deg, rgb(33, 35, 49) 0%, rgba(53, 122, 181, 1) 50%, rgba(3, 3, 3, 1) 100%);
 }

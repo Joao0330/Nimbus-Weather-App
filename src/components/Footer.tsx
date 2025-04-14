@@ -8,8 +8,8 @@ export const Footer = () => {
 
 				<div className='flex justify-between pt-5 border-t-1 border-gray-700'>
 					<strong className='text-white font-medium'>© 2025 João Rodrigues</strong>
-					<a href='https://github.com/Joao0330/React-Weather-App' target='_blank' className='hover:text-gray-400 transition-colors duration-300'>
-						Github
+					<a href='https://github.com/Joao0330' target='_blank' className='hover:text-gray-400 transition-colors duration-300'>
+						Visit my GitHub
 					</a>
 				</div>
 			</div>
