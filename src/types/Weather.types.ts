@@ -71,3 +71,16 @@ export type forecastWeatherApiDataTypes = {
 		timezone: number;
 	};
 };
+
+export type layerOptionsTypes = {
+	temp_new: 'Temperature';
+	wind_new: 'Wind';
+	clouds_new: 'Clouds';
+	precipitation: 'Precipitation';
+	pressure_new: 'Pressure';
+};
+
+export type MapLayerSelectorProps = {
+	selectedLayer: string;
+	onSelectLayer: (layer: string) => void;
+};

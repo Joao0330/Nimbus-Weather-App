@@ -1,4 +1,4 @@
-import { weatherDescCardTypes } from '../types/Weather.types';
+import { layerOptionsTypes, weatherDescCardTypes } from '../types/Weather.types';
 
 export const unitMap: Record<weatherDescCardTypes['type'], string> = {
 	temperature: ' °C',
@@ -23,4 +23,35 @@ export const weatherDescText: Record<string, string> = {
 	Ash: 'The air is filled with ash, creating a dark and smoky atmosphere. It is best to stay indoors and avoid outdoor activities until the air clears.',
 	Squall: 'A squall is approaching, bringing strong winds and heavy rain. Stay indoors and avoid outdoor activities until the storm passes.',
 	Tornado: 'A tornado is forming, creating a dangerous and destructive atmosphere. Seek shelter immediately and stay safe until the storm passes.',
+};
+
+export const layerOptions: layerOptionsTypes = {
+	temp_new: 'Temperature',
+	wind_new: 'Wind',
+	clouds_new: 'Clouds',
+	precipitation: 'Precipitation',
+	pressure_new: 'Pressure',
+};
+
+export const mapLabels: Record<string, { label: string; values: number[]; gradientClass: string }> = {
+	temp_new: {
+		label: 'Temperature, °C',
+		values: [-40, -20, 0, 20, 40],
+		gradientClass: 'temperature-gradient',
+	},
+	wind_new: {
+		label: 'Wind speed, m/s',
+		values: [0, 2, 3, 6, 12, 25, 50, 100],
+		gradientClass: 'wind-gradient',
+	},
+	clouds_new: {
+		label: 'Cloudiness, %',
+		values: [0, 25, 50, 75, 100],
+		gradientClass: 'clouds-gradient',
+	},
+	pressure_new: {
+		label: 'Pressure, hPa',
+		values: [950, 980, 1010, 1040, 1070],
+		gradientClass: 'pressure-gradient',
+	},
 };
