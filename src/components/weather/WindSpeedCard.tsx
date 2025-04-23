@@ -10,7 +10,7 @@ export const WindSpeedCard = () => {
 
 	return (
 		<article className='bottomCards'>
-			<div className='flex gap-3'>
+			<div className='flex gap-3 max-[600px]:items-center'>
 				<div className='flex flex-col w-3/5'>
 					<div className='flex items-center gap-3 text-gray-light mb-5'>
 						<LuWind className='text-xl' />

@@ -6,7 +6,7 @@ export const WeatherDesc = () => {
 	const { weather, isLoading, isError } = useWeather();
 
 	return (
-		<div className='flex flex-col items-center justify-center gap-5 text-white text-center mb-[6rem]'>
+		<div className='flex flex-col items-center justify-center gap-5 text-white text-center mb-[6rem] max-[991px]:gap-3'>
 			{isLoading && <Loader />}
 			{isError && <p>Error fetching weather data</p>}
 

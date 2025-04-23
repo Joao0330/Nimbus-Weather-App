@@ -1,6 +1,6 @@
 export const AboutProjectInfo = () => {
 	return (
-		<div className='container flex flex-col gap-5 py-[7rem]'>
+		<div className='container flex flex-col gap-5 py-[7rem] max-[1170px]:px-[4rem] max-[640px]:px-[2rem] max-[500px]:px-[1rem]'>
 			<h2 className='text-4xl font-bold mb-8'>About this project</h2>
 			<p className='font-light text-gray-300'>Nimbus is a weather application built using React and Tailwind CSS. It provides real-time weather data and forecasts for any location worldwide.</p>
 			<p className='font-light text-gray-300'>

@@ -32,7 +32,7 @@ export const WeatherForecastCard = ({ type }: weatherForecastTypes) => {
 
 			{forecastWeather && (
 				<>
-					<div className='flex justify-between gap-7 overflow-x-scroll scrollbar'>
+					<div className='flex justify-between gap-7 overflow-x-scroll scrollbar max-[500px]:gap-3'>
 						{forecastData.map((item, index) => (
 							<WeatherForecastDetails
 								key={index}
