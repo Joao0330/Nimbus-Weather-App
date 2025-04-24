@@ -1,54 +1,56 @@
-# React + TypeScript + Vite
+# Nimbus - Weather application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Nimbus is a web application created using React js and Tailwind CSS that allows the user to visualize the weather forecast from around the world. All of this is possible with the use of the <a href="https://openweathermap.org/api" target="_blank">Openweathermap API</a>.
 
-Currently, two official plugins are available:
+## ⚡Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1.  Before launching the app, first, you should create an account on the <a href="https://home.openweathermap.org/users/sign_in" target="_blank">Openweathermap</a> website to have access to an API key that will be used to fetch the data.
 
-## Expanding the ESLint configuration
+2.  After registering, go to<a href="https://home.openweathermap.org/api_keys" target="_blank">My API Keys</a> and retrive your **API KEY**.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+3.  Download the source code from the repository and your folder tree structure should look like this:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+└── 📁public
+└── 📁src
+└── .gitignore
+└── eslint.config.js
+└── index.html
+└── package-lock.json
+└── package.json
+└── README.md
+└── tsconfig.app.json
+└── tsconfig.json
+└── tsconfig.node.json
+└── vite.config.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+4.  On the root of the project, where the `index.html` file is, create a new file `.env` and inside of it paste the following code:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+    ```env
+    VITE_API_KEY = "YOUR_API_KEY";
+    ```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+    Change the **YOUR_API_KEY** field with your actual key and save the file.
+
+    With this, your folder structure should look like this:
+
 ```
+└── 📁public
+└── 📁src
+└── .env    <--
+└── .gitignore
+└── eslint.config.js
+└── index.html
+└── package-lock.json
+└── package.json
+└── README.md
+└── tsconfig.app.json
+└── tsconfig.json
+└── tsconfig.node.json
+└── vite.config.ts
+```
+
+5.  Now open your console and type the command `npm install` to install all the necessary dependencies. **Make sure you are on the correct path in the console before installing the dependencies, if its not you should change the path to where the `package.json` is located!**
+
+6.  With the `node_modules` installed we can now run the app using the command `npm run dev` on the console and then launching it on the `http://localhost:5173/`.
