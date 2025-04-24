@@ -226,3 +226,11 @@
 @utility hamburgerBtnRows {
 	@apply block w-[25px] h-[3px] my-[5px] bg-white transition-all duration-300;
 }
+
+@utility navbarMenu {
+	@apply max-[450px]:fixed max-[450px]:opacity-0 max-[450px]:right-[-200%] max-[450px]:top-0 max-[450px]:w-[250px] max-[450px]:h-full max-[450px]:bg-gray-900 max-[450px]:flex max-[450px]:pt-[8rem] transition-all duration-300;
+
+	&.active {
+		@apply max-[450px]:opacity-100 max-[450px]:right-0;
+	}
+}

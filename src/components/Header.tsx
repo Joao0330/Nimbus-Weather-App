@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { useState } from 'react';
+import { navbarLinks } from '../data/navbar-links';
+import { NavLinks } from './NavLinks';
 
 export const Header = () => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -18,24 +20,15 @@ export const Header = () => {
 						<img src={logo} alt='logo image' className='w-[50px]' />
 					</Link>
 
-					<nav className='max-[450px]:hidden'>
-						<ul className='flex items-center gap-6'>
-							<li>
-								<Link to='/about' className='text-white hover:text-gray-400 transition-colors duration-300'>
-									About
-								</Link>
-							</li>
-							<li>
-								<Link to='/weather-maps' className='text-white hover:text-gray-400 transition-colors duration-300'>
-									Weather Maps
-								</Link>
-							</li>
+					<nav className={`navbarMenu ${isMobileMenuOpen ? 'active' : ''}`}>
+						<ul className='flex items-center gap-6 max-[450px]:flex-col max-[450px]:gap-9 max-[450px]:w-full max-[450px]:px-5'>
+							{navbarLinks.map((link, index) => (
+								<NavLinks key={index} {...link} />
+							))}
 						</ul>
 					</nav>
 
-					{/* TODO make the mobile menu work */}
-
-					<button className={`hamburgerBtn ${isMobileMenuOpen ? 'active' : ''}`} onClick={toggleMobileMenu}>
+					<button className={`hamburgerBtn ${isMobileMenuOpen ? 'active fixed right-4' : ''}`} onClick={toggleMobileMenu}>
 						<span className='hamburgerBtnRows'></span>
 						<span className='hamburgerBtnRows'></span>
 						<span className='hamburgerBtnRows'></span>
