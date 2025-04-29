@@ -41,3 +41,5 @@ export const Home = () => {
 		</section>
 	);
 };
+
+/* TODO Look into protecting the API key in the backend environment. https://chat.deepseek.com/a/chat/s/f707dc55-ff76-4062-85b8-670f897e8a2b */

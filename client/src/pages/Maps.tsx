@@ -1,6 +1,6 @@
 import { MapContainer, TileLayer, ZoomControl } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { API_KEY } from '../lib/apiKey';
+/* import { API_KEY } from '../lib/apiKey'; */
 import { useState } from 'react';
 import { MapLayerSelector } from '../components/Maps/MapLayerSelector';
 import { MapLabels } from '../components/Maps/MapLabels';
@@ -16,7 +16,7 @@ export const Maps = () => {
 
 					<TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
 
-					<TileLayer url={`https://tile.openweathermap.org/map/${layer}/{z}/{x}/{y}.png?appid=${API_KEY}`} opacity={1} />
+					{/* <TileLayer url={`https://tile.openweathermap.org/map/${layer}/{z}/{x}/{y}.png?appid=${API_KEY}`} opacity={1} /> */}
 
 					<MapLayerSelector selectedLayer={layer} onSelectLayer={setLayer} />
 

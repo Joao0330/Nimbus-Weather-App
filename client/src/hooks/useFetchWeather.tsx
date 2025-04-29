@@ -2,8 +2,13 @@ import { api } from '../lib/axios';
 import { useQuery } from '@tanstack/react-query';
 
 const fetchWeather = async (city: string, type: 'current' | 'forecast') => {
-	const forecastType = { current: 'weather', forecast: 'forecast' };
-	const { data } = await api.get(`/${forecastType[type]}?q=${city}`);
+	const endpoint = type === 'forecast' ? 'forecast' : 'weather';
+	const { data } = await api.get(`/${endpoint}`, {
+		params: {
+			q: city,
+			units: 'metric',
+		},
+	});
 	return data;
 };
 
