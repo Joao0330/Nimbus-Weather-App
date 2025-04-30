@@ -15,7 +15,7 @@ export const Maps = () => {
 
 					<TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' />
 
-					<TileLayer url={`http://localhost:3333/weather-maps/${layer}/{z}/{x}/{y}.png`} opacity={1} attribution='Weather data by OpenWeather' />
+					<TileLayer url={`https://nimbus-backend-or5h.onrender.com/weather-maps/${layer}/{z}/{x}/{y}.png`} opacity={1} attribution='Weather data by OpenWeather' />
 
 					<MapLayerSelector selectedLayer={layer} onSelectLayer={setLayer} />
 
