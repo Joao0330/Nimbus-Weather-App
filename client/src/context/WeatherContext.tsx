@@ -21,7 +21,7 @@ type WeatherProviderProps = {
 const WeatherContext = createContext({} as WeatherContextDataTypes);
 
 export function WeatherProvider({ children }: WeatherProviderProps) {
-	const [city, setCity] = useState('lisbon');
+	const [city, setCity] = useState(localStorage.getItem('city') || 'London');
 	const { data: weather, isLoading, isError } = useFetchWeather(city, 'current');
 	const { data: forecastWeather, isLoading: forecastIsLoading, isError: forecastIsError } = useFetchWeather(city, 'forecast');
 
