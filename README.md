@@ -11,46 +11,28 @@ Nimbus is a web application created using React js and Tailwind CSS that allows 
 3.  Download the source code from the repository and your folder tree structure should look like this:
 
 ```
-└── 📁public
-└── 📁src
+└── 📁client
+└── 📁server
 └── .gitignore
-└── eslint.config.js
-└── index.html
-└── package-lock.json
-└── package.json
 └── README.md
-└── tsconfig.app.json
-└── tsconfig.json
-└── tsconfig.node.json
-└── vite.config.ts
 ```
 
-4.  On the root of the project, where the `index.html` file is, create a new file `.env` and inside of it paste the following code:
+4.  On the server folder, where the `.env.example` file is, change the name of the file so it is just `.env` and inside of it change these settings:
 
     ```env
-    VITE_API_KEY = "YOUR_API_KEY";
+        PORT=YOUR_PORT              <-- Change to your desired PORT number
+        API_KEY=YOUR_API_KEY        <-- Replace with your actual API key
     ```
 
-    Change the **YOUR_API_KEY** field with your actual key and save the file.
-
-    With this, your folder structure should look like this:
+    With this, your server folder structure should look like this:
 
 ```
-└── 📁public
 └── 📁src
-└── .env    <--
-└── .gitignore
-└── eslint.config.js
-└── index.html
+└── .env
 └── package-lock.json
 └── package.json
-└── README.md
-└── tsconfig.app.json
-└── tsconfig.json
-└── tsconfig.node.json
-└── vite.config.ts
 ```
 
-5.  Now open your console and type the command `npm install` to install all the necessary dependencies. **Make sure you are on the correct path in the console before installing the dependencies, if its not you should change the path to where the `package.json` is located!**
+5.  Now open your console and type the command `npm install` to install all the necessary dependencies on the client and the server. **Make sure you are on the correct path in the console before installing the dependencies in both paths, if its not you should change the path to where the `package.json` is located in each folder!**
 
-6.  With the `node_modules` installed we can now run the app using the command `npm run dev` on the console and then launching it on the `http://localhost:5173/`.
+6.  With the `node_modules` installed on both folders, it is recomended to have 2 terminals open to launch both the frontend and the backend, then we can use the command `npm run dev` both on the client and server folders to launch the respective applications.
