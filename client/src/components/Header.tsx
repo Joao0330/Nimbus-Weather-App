@@ -23,7 +23,7 @@ export const Header = () => {
 					<nav className={`navbarMenu ${isMobileMenuOpen ? 'active' : ''}`}>
 						<ul className='flex items-center gap-6 max-[450px]:flex-col max-[450px]:gap-9 max-[450px]:w-full max-[450px]:px-5'>
 							{navbarLinks.map((link, index) => (
-								<NavLinks key={index} {...link} />
+								<NavLinks key={index} url={link.url} title={link.title} toggleMobileMenu={toggleMobileMenu} />
 							))}
 						</ul>
 					</nav>
