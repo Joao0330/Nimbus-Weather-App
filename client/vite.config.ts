@@ -8,4 +8,7 @@ export default defineConfig({
 	server: {
 		host: true,
 	},
+	build: {
+		assetsInlineLimit: 0, // Force all assets to be copied as files
+	},
 });
