@@ -2,6 +2,8 @@
 
 Nimbus is a web application created using React js and Tailwind CSS that allows the user to visualize the weather forecast from around the world. All of this is possible with the use of the <a href="https://openweathermap.org/api" target="_blank">Openweathermap API</a>.
 
+**You can check the live demo of this project here: <a href="https://nimbus-msu3.onrender.com/" target="_blank">Live Preview</a>**
+
 ## ⚡Getting Started
 
 1.  Before launching the app, first, you should create an account on the <a href="https://home.openweathermap.org/users/sign_in" target="_blank">Openweathermap</a> website to have access to an API key that will be used to fetch the data.
