@@ -6,14 +6,17 @@ import { CloudCoverCard } from '../components/weather/CloudCoverCard';
 import { WindSpeedCard } from '../components/weather/WindSpeedCard';
 import { useWeather } from '../context/WeatherContext';
 import { useWeatherDescCardData } from '../hooks/useWeatherDescCardData';
+import { useAos } from '../hooks/useAos';
 
 export const Home = () => {
 	const { setCity } = useWeather();
 	const weatherDescCardData = useWeatherDescCardData();
 
+	useAos();
+
 	return (
 		<section className='min-h-screen background-gradient py-[7rem] max-[1170px]:px-[4rem] max-[640px]:px-[2rem] max-[500px]:px-[1rem]'>
-			<div className='container flex gap-5 p-6 rounded-3xl bg-black-transparent max-[991px]:flex-col'>
+			<div className='container flex gap-5 p-6 rounded-3xl bg-black-transparent max-[991px]:flex-col' data-aos='fade-down' data-aos-once='true'>
 				<div className='w-2/5 flex flex-col gap-5 max-[991px]:w-full'>
 					<SearchBar onSearch={setCity} />
 
