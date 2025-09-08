@@ -7,7 +7,7 @@ export const Footer = () => {
 				</div>
 
 				<div className='flex justify-between pt-5 border-t-1 border-gray-700'>
-					<strong className='text-white font-medium'>© 2025 João Rodrigues</strong>
+					<strong className='text-white font-medium'>© {new Date().getFullYear()} João Rodrigues</strong>
 					<a href='https://github.com/Joao0330' target='_blank' className='hover:text-gray-400 transition-colors duration-300'>
 						Visit my GitHub
 					</a>
